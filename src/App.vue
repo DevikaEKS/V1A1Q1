@@ -1,8 +1,8 @@
 <script setup>
 </script>
+
 <template>
-  <main>
-    <div className="container-fluid backgroundpart">
+<div className="container-fluid backgroundpart">
       <div className="contentcard">
         <h2 className="congratshead">Congratulations</h2>
         <div className="profile">
@@ -18,7 +18,9 @@
         <img src="https://cdn-icons-png.flaticon.com/512/888/888879.png" alt="Watch" className="gift-img"/>
       </div>
     </div>
-  </main>
+  
 </template>
 
+<style scoped>
 
+</style>
