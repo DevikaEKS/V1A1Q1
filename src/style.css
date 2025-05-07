@@ -1,0 +1,109 @@
+/* Background styling */
+.backgroundpart {
+    
+    background: url('./assets/blogcardbg.png') ; 
+     background-size: cover;
+     min-height: 100vh;      
+     width: 100%;             
+     display: flex;            
+     justify-content: center;
+     align-items: center;
+     padding: 20px;
+   }
+   
+   /* Card styling */
+   .contentcard {
+     background-color: #e6f9fc;
+     border-radius: 15px;
+     padding: 30px 20px;
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+     max-width: 400px;
+     width: 100%;
+     text-align: center;
+   }
+   
+   /* Heading */
+   .congratshead {
+     font-size: 24px;
+     font-weight: bold;
+     margin-bottom: 20px;
+     color: #333;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
+   }
+   .contentcard:hover {
+     transform: scale(1.05); /* Slight zoom/lift */
+     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25); /* Enhanced shadow on hover */
+   }
+   /* Profile image & text */
+   .profile-pic {
+     width: 100px;
+     height: 100px;
+     border-radius: 50%;
+     object-fit: cover;
+     margin-bottom: 10px;
+   }
+   
+   .name {
+     margin: 0;
+     font-size: 18px;
+     color: #007b8f;
+   }
+   
+   .college {
+     font-size: 14px;
+     color: #555;
+     margin-top: 5px;
+   }
+   
+   /* Gift image */
+   .gift-img {
+     margin-top: 20px;
+     width: 80px;
+     height: auto;
+   }
+ 
+   .datepart{
+     display: flex;
+     justify-content: end;
+     align-items: center;
+     padding: 10px;
+    
+   }
+   .datebox{
+     border: 1px solid rgb(123, 165, 243);
+     padding:4px 5px;
+     border-radius: 5px;
+     background-color: white;
+     box-shadow: 0 12px 25px rgba(0, 0, 0, 0.25);
+   }
+   .fullpart{
+    background-color: rgb(163, 218, 243);
+    margin: 0px;
+   }
+   
+   /* Responsive tweaks */
+   @media (max-width: 500px) {
+     .contentcard {
+       padding: 20px 15px;
+     }
+   
+     .congratshead {
+       font-size: 20px;
+     }
+   
+     .name {
+       font-size: 16px;
+     }
+   
+     .college {
+       font-size: 13px;
+     }
+   
+     .gift-img {
+       width: 60px;
+     }
+   }
+   html, body {
+    margin: 0;
+    padding: 0;
+  } 
