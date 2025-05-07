@@ -1,4 +1,5 @@
 
+
 <template>
   <div class="fullpart">
     <div class="datepart">
@@ -31,40 +32,40 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: 'CongratulationsCard',
-  data() {
-    return {
-      now: new Date(),
-      timer: null,
-    };
-  },
-  computed: {
-    formatted() {
-      return this.now.toLocaleString('en-GB', {
-        weekday: 'long',
-        day:     '2-digit',
-        month:   'short',
-        year:    'numeric',
-        hour:    '2-digit',
-        minute:  '2-digit',
-        second:  '2-digit',
-        hour12:  false
-      });
-    }
-  },
-  mounted() {
-    // update every second
-    this.timer = setInterval(() => {
-      this.now = new Date();
-    }, 1000);
-  },
-  beforeUnmount() {
-    clearInterval(this.timer);
-  }
-}
+<script setup>
+import { ref, computed, onMounted, onBeforeUnmount } from 'vue'
+
+// 1. Define a reactive "now" value (like useState)
+const now = ref(new Date())
+
+// 2. Create the "formatted" computed prop (like a React derived value)
+const formatted = computed(() =>
+  now.value.toLocaleString('en-GB', {
+    weekday: 'long',
+    day:     '2-digit',
+    month:   'short',
+    year:    'numeric',
+    hour:    '2-digit',
+    minute:  '2-digit',
+    second:  '2-digit',
+    hour12:  false
+  })
+)
+
+// 3. On mount, start an interval that updates "now" every second (like useEffect)
+let timer
+onMounted(() => {
+  timer = setInterval(() => {
+    now.value = new Date()
+  }, 1000)
+})
+
+// 4. On unmount, clear the interval (cleanup in useEffect)
+onBeforeUnmount(() => {
+  clearInterval(timer)
+})
 </script>
 
-<style scoped></style>
-
+<style scoped>
+/* (your existing CSS here) */
+</style>
